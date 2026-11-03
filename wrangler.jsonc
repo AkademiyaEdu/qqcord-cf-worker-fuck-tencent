@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "qqcord-cf-worker-fuck-tencent",
   "main": "src/index.js",
-  "compatibility_date": "2026-11-04",
+  "compatibility_date": "2026-11-03",
   "keep_vars": true,
   "vars": {
     "UPSTREAM_HOSTNAME": "",
