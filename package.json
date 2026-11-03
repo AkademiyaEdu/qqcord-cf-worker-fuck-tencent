@@ -1,0 +1,20 @@
+{
+  "name": "qqcord-cf-worker-fuck-tencent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "UPSTREAM_HOSTNAME": {
+        "description": "Required. Enter your own upstream hostname without https://, for example `files.example.com`"
+      }
+    }
+  }
+}
