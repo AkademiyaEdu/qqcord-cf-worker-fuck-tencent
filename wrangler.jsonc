@@ -6,5 +6,9 @@
   "keep_vars": true,
   "vars": {
     "UPSTREAM_HOSTNAME": "",
-  }
+  },
+  "cache": {
+    "enabled": true,
+    "cross_version_cache": true,
+  },
 }
