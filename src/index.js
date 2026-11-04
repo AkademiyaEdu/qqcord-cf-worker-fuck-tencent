@@ -17,7 +17,7 @@ export default {
     result.headers.set(
       "Cache-Control",
       response.status === 200
-        ? "public, s-maxage=31536000, max-age=0"
+        ? "public, max-age=31536000, s-maxage=31536000, immutable"
         : "no-store",
     );
     return result;
