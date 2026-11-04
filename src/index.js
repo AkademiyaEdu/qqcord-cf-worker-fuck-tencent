@@ -13,13 +13,37 @@ export default {
     const response = await fetch(new Request(url, request), {
       redirect: "follow",
     });
-    const result = new Response(response.body, response);
-    result.headers.set(
+    // Forward only headers relevant to file downloads and cache validation.
+    const headers = new Headers();
+    for (const name of [
+      "content-type",
+      "content-length",
+      "content-disposition",
+      "content-encoding",
+      "content-range",
+      "accept-ranges",
+      "etag",
+      "last-modified",
+      "location",
+      "retry-after",
+      "x-content-type-options",
+      "x-robots-tag",
+    ]) {
+      const value = response.headers.get(name);
+      if (value !== null) headers.set(name, value);
+    }
+
+    headers.set(
       "Cache-Control",
       response.status === 200
         ? "public, max-age=31536000, s-maxage=31536000, immutable"
         : "no-store",
     );
-    return result;
+
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
   },
 };
