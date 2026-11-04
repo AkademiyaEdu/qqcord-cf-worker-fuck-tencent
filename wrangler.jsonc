@@ -4,9 +4,6 @@
   "main": "src/index.js",
   "compatibility_date": "2026-11-03",
   "keep_vars": true,
-  "vars": {
-    "UPSTREAM_HOSTNAME": "",
-  },
   "cache": {
     "enabled": true,
     "cross_version_cache": true,
